@@ -145,18 +145,23 @@ section p { margin: 0 0 0.85rem; }
   margin: 0;
 }
 .news li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
   padding: 0.55rem 0;
   border-bottom: 1px solid var(--line);
   font-size: 0.96rem;
 }
 .news li:last-child { border-bottom: none; }
 .news .date {
-  display: inline-block;
-  min-width: 5.5rem;
+  flex: 0 0 5.5rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
   font-size: 0.88rem;
-  margin-right: 0.5rem;
+}
+@media (max-width: 600px) {
+  .news li { flex-direction: column; gap: 0.15rem; align-items: stretch; }
+  .news .date { flex: none; }
 }
 
 /* ----- publications ----- */
